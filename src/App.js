@@ -10,7 +10,9 @@ function App() {
       <Title>
         Search Movies
       </Title>
-      <SearchForm/>
+      <div className='SearchForm-wrapper'>
+        <SearchForm/>
+      </div>
     </div>
   );
 }
