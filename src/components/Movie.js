@@ -12,6 +12,7 @@ class Movie extends Component {
     console.log('las props', this.props)
     const { poster, title, year } = this.props;
     return (
+      
       <div classNameName="card">
         <div classNameName="card-image">
           <figure className="image is-4by3">

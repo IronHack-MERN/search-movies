@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Title from "./components/Title";
 import SearchForm from "./components/SearchForm";
 import MoviesList from './components/MoviesList';
+import MovieDetail from './views/MovieDetail';
 import "./App.css";
 import "bulma/css/bulma.css";
 
@@ -18,7 +19,7 @@ class App extends Component {
 
   _renderResults = () => {
     return this.state.results.length === 0 
-    ? <p>Sorry! 😞 Results not found!</p>
+    ? <p> Sorry! 😞 Results not found!</p>
     : <MoviesList movies={this.state.results} />
     
   }
