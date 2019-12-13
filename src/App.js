@@ -7,12 +7,21 @@ import "bulma/css/bulma.css";
 
 class App extends Component {
   state = {
-    results: []
+    results: [],
+    usedSearch: false
   };
 
   _handleResults = results => {
-    this.setState({ results });
+    this.setState({ results, usedSearch: true });
+
   };
+
+  _renderResults = () => {
+    return this.state.results.length === 0 
+    ? <p>Sorry! 😞 Results not found!</p>
+    : <MoviesList movies={this.state.results} />
+    
+  }
 
   render() {
     return (
@@ -22,10 +31,11 @@ class App extends Component {
           <SearchForm onResults={this._handleResults} />
         </div>
         {
-          this.state.results.length === 0 
-          ? <p>No results</p>
-          : <MoviesList movies={this.state.results} />
+          this.state.usedSearch
+          ? this._renderResults()
+          : <small>Use the form to search movie</small>
         }
+        
       </div>
     );
   }
