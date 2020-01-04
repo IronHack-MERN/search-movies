@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Home from './views/Home';
 import MovieDetail from './views/MovieDetail';
+import NotFound from './views/NotFound'
 
 import "./App.css";
 import "bulma/css/bulma.css";
@@ -13,6 +14,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/detail/:id" component={MovieDetail} />
+          <Route component={NotFound} />
         </Switch>
         </div>
     );
