@@ -10,13 +10,16 @@ class MovieDetail extends Component {
     fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`)
       .then(res => res.json())
       .then(movie => {
-        console.log({movie})
-        this.setState({ movie })
+        this.setState({ movie });
       });
   }
 
+  _goBack(){
+    window.history.back();
+  }
+
   componentDidMount() {
-    const {id} = this.props.match.params;
+    const { id } = this.props.match.params;
     this._fetchMovie({ id });
   }
 
@@ -24,8 +27,9 @@ class MovieDetail extends Component {
     const { Title, Poster, Actors, Metascore, Plot } = this.state.movie;
     return (
       <div>
+        <button onClick={this._goBack}>Return</button>
         <h1>{Title}</h1>
-        <img src={Poster}/>
+        <img src={Poster} alt='poster-movie'/>
         <h3>{Actors}</h3>
         <span>{Metascore}</span>
         <p>{Plot}</p>

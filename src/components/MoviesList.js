@@ -6,6 +6,7 @@ class MoviesList extends Component {
   static propTypes = {
     movies: PropTypes.array
   };
+  
   render() {
     const { movies } = this.props;
     return (
