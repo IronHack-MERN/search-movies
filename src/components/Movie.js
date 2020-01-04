@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import {Link} from 'react-router-dom';
 
 class Movie extends Component {
   static propTypes = {
+    id: PropTypes.string,
     title: PropTypes.string,
     year: PropTypes.string,
     poster: PropTypes.string
   };
 
   render() {
-    console.log('las props', this.props)
-    const { poster, title, year } = this.props;
+    const { id, poster, title, year } = this.props;
     return (
-      
-      <div classNameName="card">
-        <div classNameName="card-image">
+      <Link to={`/detail/${id}`} className="card">
+        <div className="card-image">
           <figure className="image is-4by3">
             <img
               src={poster}
@@ -30,7 +30,7 @@ class Movie extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </Link>
     );
   }
 }
