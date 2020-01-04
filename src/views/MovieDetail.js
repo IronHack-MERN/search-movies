@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ButtonBackToHome from '../components/ButtonBackToHome';
+
 const API_KEY = "454df520";
 
 class MovieDetail extends Component {
@@ -27,7 +29,7 @@ class MovieDetail extends Component {
     const { Title, Poster, Actors, Metascore, Plot } = this.state.movie;
     return (
       <div>
-        <button onClick={this._goBack}>Return</button>
+        <ButtonBackToHome/>
         <h1>{Title}</h1>
         <img src={Poster} alt='poster-movie'/>
         <h3>{Actors}</h3>
