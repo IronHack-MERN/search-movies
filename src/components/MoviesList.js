@@ -13,7 +13,7 @@ class MoviesList extends Component {
       <div className="MoviesList">
         {movies.map(movie => {
           return (
-            <div key={movie.imdbID} className="MoviesList-item">
+            <div key={movie.imdbID} className="columns is-mobile">
               <Movie
                 id={movie.imdbID}
                 title={movie.Title}

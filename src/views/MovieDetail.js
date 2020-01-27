@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ButtonBackToHome from '../components/ButtonBackToHome';
+import ButtonBackToHome from "../components/ButtonBackToHome";
 
 const API_KEY = "454df520";
 
@@ -16,7 +16,7 @@ class MovieDetail extends Component {
       });
   }
 
-  _goBack(){
+  _goBack() {
     window.history.back();
   }
 
@@ -28,14 +28,32 @@ class MovieDetail extends Component {
   render() {
     const { Title, Poster, Actors, Metascore, Plot } = this.state.movie;
     return (
-      <div>
-        <ButtonBackToHome/>
-        <h1>{Title}</h1>
-        <img src={Poster} alt='poster-movie'/>
-        <h3>{Actors}</h3>
-        <span>{Metascore}</span>
-        <p>{Plot}</p>
+        
+      <div className="columns is-mobile">
+        <div className="card">
+          <div className="card-image">
+            <figure>
+              <img src={Poster} alt="poster-movie" />
+            </figure>
+          </div>
+          <div className="card-content">
+            <div className="media-content">
+              <p className="title is-4">{Title}</p>
+              <p className="subtitle is-6">{Actors}</p>
+            </div>
+          </div>
+          <div className="content">
+            {Metascore}
+            {Plot}
+            <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+          </div>
+          <div>
+            <ButtonBackToHome/>
+          </div>
+        </div>
       </div>
+        
+     
     );
   }
 }

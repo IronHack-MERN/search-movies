@@ -14,7 +14,8 @@ class Movie extends Component {
     const { id, poster, title, year } = this.props;
     return (
       <Link to={`/detail/${id}`} className="card">
-        <div className="card-image">
+        <div className="column"> <img src={poster} alt={title} />
+        {/* <div className="card-image">
           <figure className="image is-4by3">
             <img src={poster} alt={title} />
           </figure>
@@ -26,6 +27,7 @@ class Movie extends Component {
               <p className="subtitle is-6">{year}</p>
             </div>
           </div>
+        </div> */}
         </div>
       </Link>
     );
