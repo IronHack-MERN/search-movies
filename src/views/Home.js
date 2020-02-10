@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Title from "../components/Title";
 import SearchForm from "../components/SearchForm";
-import MoviesList from '../components/MoviesList';
+import MoviesList from "../components/MoviesList";
+import Nav from "../components/Nav";
 
 class Home extends Component {
-
   state = {
     results: [],
     usedSearch: false
@@ -16,8 +16,12 @@ class Home extends Component {
 
   _renderResults = () => {
     return this.state.results.length === 0 ? (
-      <p> Sorry! 
-        <span role="img" aria-label="Snowman">😞</span>
+      <p>
+        {" "}
+        Sorry!
+        <span role="img" aria-label="Snowman">
+          😞
+        </span>
         Results not found!
       </p>
     ) : (
@@ -28,6 +32,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <Nav />
         <Title>Search Movies</Title>
         <div className="SearchForm-wrapper">
           <SearchForm onResults={this._handleResults} />

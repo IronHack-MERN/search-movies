@@ -22,13 +22,13 @@
   margin:0;
   padding-top: 0px;
 }
+
 .MoviesList-item{
   margin-bottom: 24px;
   width: 48%;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
-
 
 html, body{
     margin: 0;
@@ -48,11 +48,10 @@ body{
     text-align: center;
     font-size: 40px;
     color: #6a6a6a;
-    margin-top: 100px;
+    margin-top: 2rem;
     font-weight: 100;
     font-family: 'Roboto', sans-serif;
 }
-
 
 .container{
     width: 100%;
@@ -64,7 +63,15 @@ body{
     margin: auto;
 }
 
+.card-detail{
+  width: 70%;
+  margin: 0 auto;
+  padding: 5%;
+  background-color: #F8F8F4;
+}
+
 .container .card{
+    margin: 0 auto;
     width: 330px;
     height: 430px;
     border-radius: 8px;
@@ -101,4 +108,12 @@ body{
     text-decoration: none;
     color: #3498db;
 }
+
+p .title{
+  font: 2rem;
+}
+
+.card-content p{
+  text-align: justify;
+} 
 
